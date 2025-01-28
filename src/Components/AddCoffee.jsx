@@ -1,4 +1,4 @@
-import { data } from 'autoprefixer';
+import Swal from 'sweetalert2'
 import React from 'react';
 
 const AddCoffee = () => {
@@ -26,7 +26,14 @@ const AddCoffee = () => {
             body:JSON.stringify(newCoffee)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            Swal.fire({
+                title: "Success",
+                icon: "success",
+                draggable: true
+              });
+        })
     }
 
     return (
